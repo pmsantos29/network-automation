@@ -1,0 +1,234 @@
+{
+  "localhost:5001": {
+    "show ip int brief\n": [
+      {
+        "interface": "Ethernet0/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Vlan1",
+        "ip_address": "unassigned",
+        "status": "administratively down",
+        "proto": "down"
+      }
+    ],
+    "show clock\n": [
+      {
+        "time": "17:26:34.867",
+        "timezone": "WET",
+        "dayweek": "Sun",
+        "month": "Jan",
+        "day": "21",
+        "year": "2024"
+      }
+    ]
+  },
+  "localhost:5006": {
+    "show ip int brief\n": [
+      {
+        "interface": "Ethernet0/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet0/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet1/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet2/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/0",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/1",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/2",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Ethernet3/3",
+        "ip_address": "unassigned",
+        "status": "up",
+        "proto": "up"
+      },
+      {
+        "interface": "Vlan1",
+        "ip_address": "unassigned",
+        "status": "administratively down",
+        "proto": "down"
+      }
+    ],
+    "show clock\n": [
+      {
+        "time": "17:26:36.736",
+        "timezone": "WET",
+        "dayweek": "Sun",
+        "month": "Jan",
+        "day": "21",
+        "year": "2024"
+      }
+    ]
+  }
+}

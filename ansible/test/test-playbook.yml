@@ -1,0 +1,17 @@
+  - name: Cisco Switch show run config
+    hosts: sw1
+
+    tasks:
+      - name: run show run config on the Switch
+        ansible.netcommon.telnet:
+          port: 5001
+          send_newline: yes
+          prompts:
+            - "[>#]"
+          command:
+            - show run
+        register: response
+
+      - name: output
+        debug:
+          msg: "{{ response }}"

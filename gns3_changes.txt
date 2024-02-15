@@ -1,0 +1,1 @@
+adicionar opção nas opções adicionais da qemu configuration (gns3/modules/qemu/ui/qemu_vm_configuration_page_ui.py)
