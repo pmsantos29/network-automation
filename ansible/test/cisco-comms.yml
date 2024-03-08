@@ -1,0 +1,12 @@
+- name: Interact with switch
+  hosts: switch
+  
+  tasks:
+    - name: Run show running config
+      ansible.builtin.shell: 
+        cmd: show run
+      register: show_command
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: show_command.stdout_lines

@@ -1,0 +1,12 @@
+- name: Send command to remote LinuxVM1
+  hosts: LinuxVM
+
+  tasks:
+    - name: Check disk usage
+      ansible.builtin.shell: 
+        cmd: ls -l
+      register: disk_usage
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: disk_usage.stdout_lines

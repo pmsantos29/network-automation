@@ -1,5 +1,16 @@
 [switch]
-sw1 ansible_host=127.0.0.1  ansible_port=5001
+sw1 ansible_host=127.0.0.1 ansible_port=5001 ansible_user=ar
+
+[linuxVM]
+linux1 ansible_host=127.0.0.1 ansible_user=ar 
+#linux2 ansible_host=127.0.0.1  ansible_user=ar ssh_common_args="telnet localhost 5008"
 
 [switch:vars]
 ansible_connection=local
+#ansible_ssh_common_args="nc -C localhost 5001"
+
+[linuxVM:vars]
+#ansible_connection=local
+ansible_ssh_common_args= "telnet localhost 5005"
+#ssh_common_args=telnet localhost 5008
+#ssh_common_args="telnet localhost 5005"

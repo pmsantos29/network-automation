@@ -1,0 +1,8 @@
+- name: run show commands
+  ansible.netcommon.telnet:
+    user: '\n'
+    login_prompt: 'Press RETURN to get started.'
+    prompts:
+    - '[>#]'
+    command:
+    - show version
