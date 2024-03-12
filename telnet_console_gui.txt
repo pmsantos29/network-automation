@@ -1,6 +1,0 @@
-/usr/lib/python3.11/site-packages/gns3/modules/qemu/ui/qemu_vm_configuration_page_ui.py:555:"<li>%vm-name% =VM name</li>\n"
-/usr/lib/python3.11/site-packages/gns3/modules/qemu/ui/qemu_vm_configuration_page.ui:882:&lt;li&gt;%vm-name% =VM name&lt;/li&gt;
-/usr/lib/python3.11/site-packages/ansible_collections/community/general/plugins/modules/proxmox_disk.py:328:    name: vm-name
-/usr/lib/python3.11/site-packages/ansible_collections/community/general/plugins/modules/proxmox_disk.py:380:    name: vm-name
-/usr/lib/python3.11/site-packages/gns3server/compute/docker/docker_vm.py:399:                    formatted = formatted.replace("%vm-name%", '"' + vm_name.replace('"', '\\"') + '"')
-/usr/lib/python3.11/site-packages/gns3server/compute/qemu/qemu_vm.py:2337:        additional_options = additional_options.replace("%vm-name%", '"' + vm_name.replace('"', '\\"') + '"')

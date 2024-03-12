@@ -1,0 +1,19 @@
+allow connections ...
+causa o erro 
+
+qemu-system-x86_64: warning: Spice: reds.cpp:2551:reds_init_socket: getaddrinfo(::,5002): Address family for hostname not supported 
+qemu-system-x86_64: warning: Spice: reds.cpp:3442:do_spice_init: Failed to open SPICE sockets 
+qemu-system-x86_64: failed to initialize spice server
+
+Erro similaar
+https://gns3.com/community/support/qemu-vm-launch-syntax-error-using-spice
+
+https://github.com/GNS3/gns3-server/issues/1772
+
+Fix (Não funciona)
+https://github.com/GNS3/gns3-server/commit/3a1ba8f
+
+endereço no formato ::,5005 não funciona
+solução temporaria: inserir endereço loopback
+
+adicionar endereço ip as opções adicionais da maquina qemu
