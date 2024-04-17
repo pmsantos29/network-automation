@@ -1,11 +1,11 @@
 from netmiko import ConnectHandler
 
 net_connect = ConnectHandler(
-    device_type='cisco_ios_telnet',
+    device_type='generic_telnet',
     ip='localhost',
     username='cisco',
     password='cisco',
-    port=5001
+    port=5004
 )
 
 net_connect.enable()
