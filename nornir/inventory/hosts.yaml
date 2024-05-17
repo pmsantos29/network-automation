@@ -1,0 +1,35 @@
+# hosts.yaml
+---
+target:
+   hostname: 192.168.56.176
+   groups:
+      - linux
+   username: ar
+   password: admredes23
+
+linux1:
+   hostname: 192.168.56.176
+   port: 5009
+   groups:
+      - linux
+   username: ar
+   password: admredes23
+
+vpc1:
+   hostname: 192.168.56.176
+   port: 5011
+   groups:
+      - vpcs
+
+sw1:
+   hostname: 192.168.56.176
+   port: 5003
+   groups:
+        - ios_switch
+
+rt1:
+   hostname: 192.168.56.176
+   port: 5005
+   groups:
+        - ios_router
+
