@@ -9,6 +9,9 @@ ios_router:
 vpcs:
     platform: generic_termserver_telnet
 
+linuxvm:
+    platform: generic_telnet
+
 linux:
-    platform: generic_termserver_telnet
+    platform: linux
 

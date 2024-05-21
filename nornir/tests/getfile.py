@@ -1,45 +1,102 @@
+from nornir.core.task import Task, Result
+from nornir_netmiko.tasks import netmiko_file_transfer
 from nornir import InitNornir
-from nornir_netmiko.tasks import netmiko_send_command
 from nornir_utils.plugins.functions import print_result
 import json
+import yaml
 import os
 
-def retrieve_file(task):
-    # Run the cat command remotely
-    result = task.run(
-        task=netmiko_send_command,
-        command_string="cat /home/ar/GNS3/projects/test/test.gns3",
-    )
-    # Extract the command output
-    output = result[0].result
-
+def transfer_file(task: Task, source_file: str, dest_file: str):    
     try:
-        # Attempt to parse JSON
-        output_json = json.loads(output)
+        # If the file exists, proceed with the transfer
+        result = task.run(
+            task=netmiko_file_transfer,
+            source_file=source_file,
+            dest_file=dest_file,
+            direction='get',  # Change direction to 'get' to transfer from remote to local
+            file_system='/home/ar'
+        )
 
-        # Define file path
-        file_path = f"/home/ar/Diss_Network/nornir/{task.host.name}_file.json"
-
-        # Save the JSON to a file
-        with open(file_path, "w") as f:
-            json.dump(output_json, f, indent=4)
-        print("File successfully created:", file_path)
-    except json.JSONDecodeError as e:
-        print("JSON Decode Error:", e)
-        print("Problematic Output:", output)  # Log problematic output
+        return Result(
+            host=task.host,
+            result=f"File {source_file} transferred to {dest_file}",
+            changed=True
+        )
     except Exception as e:
-        print("Error:", e)
+        return Result(
+            host=task.host,
+            result=f"Failed to transfer file {source_file} to {dest_file}: {str(e)}",
+            failed=True
+        )
 
-# Initialize Nornir with the inventory files
-nr = InitNornir(config_file="config.yaml")
+def parse_gns3_to_yaml(input_path):
+    try:
+        with open(input_path, 'r') as json_file:
+            data = json.load(json_file)
 
-target_host = "target"  # Replace with the hostname of the target host
+        hosts = {}
 
-# Filter the hosts to include only the target host
-target_hosts = nr.filter(name=target_host)
+        for node in data['topology']['nodes']:
+            if 'console' in node and node['console'] is not None:
+                platform = None
+                if node['name'].startswith('PC'):
+                    platform = 'vpcs'
+                elif node['name'].startswith('R'):
+                    platform = 'cisco_router'
+                elif node['name'].startswith('SW'):
+                    platform = 'cisco_switch'
+                elif node['name'].startswith('LinuxVM'):
+                    platform = 'linuxvm'
+                
+                hosts[node['name'].lower()] = {
+                    'hostname': node['name'].lower(),
+                    'port': node['console']        
+                }
 
-# Run the retrieve_file task on the target hosts
-result = target_hosts.run(task=retrieve_file)
+                if platform:
+                    hosts[node['name'].lower()]['platform'] = platform
 
-# Print the result
-print_result(result)
+        with open('hosts.yaml', 'w') as yaml_file:
+            yaml.dump(hosts, yaml_file, default_flow_style=False)
+
+        print("hosts.yaml file has been created successfully.")
+        return True
+    except FileNotFoundError:
+        print(f"Error: The file {input_path} was not found.")
+        return False
+    except json.JSONDecodeError:
+        print(f"Error: The file {input_path} is not a valid JSON file.")
+        return False
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+        return False
+
+# Initialize Nornir
+try:
+    nr = InitNornir(config_file="config.yaml")
+except Exception as e:
+    print(f"Failed to initialize Nornir: {str(e)}")
+    exit(1)
+
+dest_file = "output.gns3"
+source_file = "GNS3/projects/test/test.gns3"
+
+filtered_hosts = nr.filter(name="target")
+
+if filtered_hosts.inventory.hosts:
+    result = filtered_hosts.run(
+        task=transfer_file,
+        source_file=source_file,
+        dest_file=dest_file
+    )
+    print_result(result)
+    
+    # Check if file transfer was successful before parsing
+    transfer_successful = all(not r.failed for r in result.values())
+
+    if transfer_successful:
+        parse_gns3_to_yaml(dest_file)
+    else:
+        print("File transfer failed. Skipping JSON to YAML conversion.")
+else:
+    print("No hosts matched the filter criteria.")

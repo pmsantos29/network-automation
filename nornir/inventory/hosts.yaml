@@ -9,9 +9,9 @@ target:
 
 linux1:
    hostname: 192.168.56.176
-   port: 5009
+   port: 5012
    groups:
-      - linux
+      - linuxvm
    username: ar
    password: admredes23
 

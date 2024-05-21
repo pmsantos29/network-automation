@@ -15,4 +15,4 @@ runner:
 output_dir: "reports"
 
 extras:
-     conn_timeout: 15  # Adjust timeout value here
+     conn_timeout: 66  # Adjust timeout value here

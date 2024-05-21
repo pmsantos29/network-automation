@@ -1,0 +1,19 @@
+esw1:
+  hostname: esw1
+  port: 5010
+linuxvmtest-1:
+  hostname: linuxvmtest-1
+  platform: linuxvm
+  port: 5009
+pc1:
+  hostname: pc1
+  platform: vpcs
+  port: 5011
+r1:
+  hostname: r1
+  platform: cisco_router
+  port: 5005
+sw1:
+  hostname: sw1
+  platform: cisco_switch
+  port: 5003

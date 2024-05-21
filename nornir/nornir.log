@@ -3236,3 +3236,2536 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed
 
 2024-05-17 14:17:34,545 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
 2024-05-17 14:17:45,339 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:24:59,436 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:26:51,584 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:27:15,852 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:40:53,808 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:45:51,926 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:46:02,145 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 14:46:02,146 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 14:47:04,745 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:47:14,979 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 14:47:14,980 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 14:48:31,780 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:48:41,998 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 14:48:41,999 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 14:49:25,109 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:50:31,098 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:50:41,314 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 14:50:41,315 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 14:51:11,191 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:51:24,549 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 14:51:24,549 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 14:52:22,173 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:53:31,914 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 14:54:44,150 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:14:13,735 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:14:23,937 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ l' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:14:23,938 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:22:43,218 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:23:08,805 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:23:19,009 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:23:28,260 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:24:32,328 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:24:42,457 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.2\\ \\-c\\ 2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:24:42,458 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2", expect_string="$")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:25:35,029 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:25:45,153 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:25:45,154 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2", expect_string="localhost login:")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:25:59,762 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:26:17,887 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:26:28,010 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'incorrect' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:26:28,010 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2", expect_string="incorrect")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:29:48,416 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:29:48,608 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2327, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/packet.py", line 387, in readline
+    return u(buf)
+           ^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/util.py", line 333, in u
+    return s.decode(encoding)
+           ^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/client.py", line 451, in connect
+    t.start_client(timeout=timeout)
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 738, in start_client
+    raise e
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2143, in run
+    self._check_banner()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2331, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1190, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: 
+A paramiko SSHException occurred during connection creation:
+
+Error reading SSH protocol banner'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+
+
+2024-05-17 15:29:48,609 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:30:54,314 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:31:04,503 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:31:04,503 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2", enable=True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:31:56,550 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:31:56,607 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2327, in _check_banner
+    buf = self.packetizer.readline(timeout)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/packet.py", line 387, in readline
+    return u(buf)
+           ^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/util.py", line 333, in u
+    return s.decode(encoding)
+           ^^^^^^^^^^^^^^^^^^
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1137, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/client.py", line 451, in connect
+    t.start_client(timeout=timeout)
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 738, in start_client
+    raise e
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2143, in run
+    self._check_banner()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/paramiko/transport.py", line 2331, in _check_banner
+    raise SSHException(
+paramiko.ssh_exception.SSHException: Error reading SSH protocol banner'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1190, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: 
+A paramiko SSHException occurred during connection creation:
+
+Error reading SSH protocol banner'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+
+
+
+2024-05-17 15:31:56,608 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 13, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:36:05,590 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:36:34,861 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:36:48,437 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 21, in send_telnet_commands
+    output = net_connect.send_command("\n")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'Password:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:37:31,264 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:37:41,574 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 21, in send_telnet_commands
+    output = net_connect.send_command("ar")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:39:43,154 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:39:53,466 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 22, in send_telnet_commands
+    output = net_connect.send_command("ar")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:41:23,407 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:41:33,627 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:41:33,628 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:41:50,907 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:42:38,445 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.2\\ \\-c\\ 2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:42:38,446 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 15:43:58,911 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:44:34,133 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:44:42,178 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:44:59,350 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:45:19,031 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:48:17,703 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:49:53,459 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:52:48,948 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 15:52:59,156 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 15:52:59,157 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 16:00:21,448 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:00:31,687 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'localhost\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 16:00:31,688 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 16:00:58,026 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:01:08,242 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'omeunome' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 16:01:08,243 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 16:01:28,320 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:01:41,681 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'omeunome\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 16:01:41,682 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 32, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2 -c 3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-17 16:08:52,572 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:11:54,942 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:12:33,195 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:13:10,728 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 20, in send_telnet_commands
+    print(net_connect.find_prompt())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1451, in find_prompt
+    raise ValueError(f"Unable to find prompt: {prompt}")
+ValueError: Unable to find prompt: 
+
+2024-05-17 16:13:58,776 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:14:09,088 - nornir.core.task -    ERROR -      start() - Host 'linux1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/test.py", line 22, in send_telnet_commands
+    output = net_connect.send_command("ar")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'omeunome\\ login:' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-05-17 16:15:47,040 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:16:16,294 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 16:16:55,456 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 19:38:27,703 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 19:39:48,037 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-17 19:41:35,531 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-18 09:27:09,471 -  nornir.core -     INFO -        run() - Running task 'retrieve_file' with args {} on 1 hosts
+2024-05-18 09:27:09,477 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1120, in establish_connection
+    self.remote_conn = telnetlib.Telnet(
+                       ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/telnetlib.py", line 221, in __init__
+    self.open(host, port, timeout)
+  File "/usr/lib64/python3.11/telnetlib.py", line 238, in open
+    self.sock = socket.create_connection((host, port), timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2024-05-18 09:27:09,478 - nornir.core.task -    ERROR -      start() - Host 'target': task 'retrieve_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 9, in retrieve_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-18 09:30:17,396 -  nornir.core -     INFO -        run() - Running task 'retrieve_file' with args {} on 1 hosts
+2024-05-18 09:30:17,402 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1120, in establish_connection
+    self.remote_conn = telnetlib.Telnet(
+                       ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/telnetlib.py", line 221, in __init__
+    self.open(host, port, timeout)
+  File "/usr/lib64/python3.11/telnetlib.py", line 238, in open
+    self.sock = socket.create_connection((host, port), timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2024-05-18 09:30:17,446 - nornir.core.task -    ERROR -      start() - Host 'target': task 'retrieve_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 9, in retrieve_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-18 09:32:44,426 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-05-18 09:34:53,339 -  nornir.core -     INFO -        run() - Running task 'retrieve_file' with args {} on 1 hosts
+2024-05-18 09:34:53,344 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1120, in establish_connection
+    self.remote_conn = telnetlib.Telnet(
+                       ^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/telnetlib.py", line 221, in __init__
+    self.open(host, port, timeout)
+  File "/usr/lib64/python3.11/telnetlib.py", line 238, in open
+    self.sock = socket.create_connection((host, port), timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib64/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/usr/lib64/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+2024-05-18 09:34:53,345 - nornir.core.task -    ERROR -      start() - Host 'target': task 'retrieve_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 9, in retrieve_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-05-18 09:36:47,786 -  nornir.core -     INFO -        run() - Running task 'retrieve_file' with args {} on 1 hosts
+2024-05-18 09:37:25,426 -  nornir.core -     INFO -        run() - Running task 'retrieve_file' with args {} on 1 hosts
+2024-05-18 09:50:38,348 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'output.json', 'dest_file': '/home/ar/GNS3/projects/test/test.json'} on 1 hosts
+2024-05-18 09:50:38,815 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output.json'
+
+2024-05-18 09:50:38,815 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 6, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 09:51:08,797 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'output.json', 'dest_file': '/home/ar/GNS3/projects/test/test.json'} on 1 hosts
+2024-05-18 09:51:09,248 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output.json'
+
+2024-05-18 09:51:09,249 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 6, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 09:51:19,870 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'output.json', 'dest_file': '/home/ar/GNS3/projects/test/test.json'} on 1 hosts
+2024-05-18 09:51:20,225 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output.json'
+
+2024-05-18 09:51:20,226 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 6, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 09:57:59,145 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'output.json', 'dest_file': '/home/ar/GNS3/projects/test/test.json'} on 1 hosts
+2024-05-18 09:57:59,623 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'output.json'
+
+2024-05-18 09:57:59,624 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 09:58:38,352 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.json', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 09:58:38,804 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ar/GNS3/projects/test/test.json'
+
+2024-05-18 09:58:38,805 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:00:07,140 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.json', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:00:07,721 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.json: No such file or directory
+
+2024-05-18 10:00:07,722 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 7, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:11:16,158 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.json', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:11:16,704 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.json: No such file or directory
+
+2024-05-18 10:11:16,705 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 7, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:12:47,293 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.json', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:12:47,931 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.json: No such file or directory
+
+2024-05-18 10:12:47,932 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 14, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:14:00,672 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.json', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:14:27,981 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:14:28,519 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:14:28,520 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 14, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:15:49,450 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:15:50,018 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:15:50,018 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 13, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:17:31,001 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:17:31,638 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:17:31,638 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:43:00,051 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:43:23,289 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:43:23,736 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp/home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:43:23,737 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:44:51,957 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:44:52,588 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:44:52,589 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:48:42,963 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:48:43,613 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp/output.json: No such file or directory
+
+2024-05-18 10:48:43,613 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:56:02,212 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:56:02,854 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:56:02,855 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:59:02,073 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:59:02,724 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /home//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 10:59:02,724 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 10:59:39,530 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 10:59:40,159 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar//GNS3/projects/test/test.gns3
+
+2024-05-18 10:59:40,159 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:02:57,538 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 11:02:58,092 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /home//GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 11:02:58,093 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:03:10,837 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 11:03:11,286 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar//GNS3/projects/test/test.gns3
+
+2024-05-18 11:03:11,287 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:05:52,711 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 11:05:53,270 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar//GNS3/projects/test/test.gns3
+
+2024-05-18 11:05:53,271 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:16:13,950 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': '/home/ar/output.json'} on 1 hosts
+2024-05-18 11:16:14,514 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 21, in transfer_file
+    scp_transfer = LinuxFileTransfer(
+                   ^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+md5sum: /var/tmp//home/ar/GNS3/projects/test/test.gns3: No such file or directory
+
+2024-05-18 11:17:01,585 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.json'} on 1 hosts
+2024-05-18 11:17:02,138 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar//GNS3/projects/test/test.gns3
+
+2024-05-18 11:17:02,139 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:19:34,408 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': '/home/ar/GNS3/projects/test/test.gns3', 'dest_file': '/home/ar/Diss_Network/nornir/ouput.gns3'} on 1 hosts
+2024-05-18 11:19:34,959 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  ///home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 11:19:34,959 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:25:22,797 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:25:23,370 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test//test.gns3
+
+2024-05-18 11:25:23,370 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:25:34,159 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:25:34,605 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 11:25:34,605 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:42:23,240 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:42:23,692 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 108, in __init__
+    self.source_md5 = self.file_md5(source_file) if hash_supported else None
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 337, in file_md5
+    with open(file_name, "rb") as f:
+         ^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'test.gns3'
+
+2024-05-18 11:42:23,693 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:45:05,971 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:45:06,494 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 11:45:06,494 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:45:17,811 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:45:18,255 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 11:45:18,256 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 11:59:55,632 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 11:59:56,237 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 361, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 11:59:56,237 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 12:00:53,590 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 12:00:54,152 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 361, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 12:00:54,180 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 12:10:34,060 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 12:10:34,606 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 12:10:34,606 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 12:13:42,854 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 12:13:43,436 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 12:13:43,437 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 12:14:09,697 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-18 12:14:10,150 - nornir.core.task -    ERROR -      start() - Host 'target': task 'netmiko_file_transfer' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_file_transfer.py", line 26, in netmiko_file_transfer
+    scp_result = file_transfer(
+                 ^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_functions.py", line 122, in file_transfer
+    with TransferClass(**scp_args) as scp_transfer:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 532, in FileTransfer
+    return FileTransferClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 179, in __init__
+    super().__init__(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 112, in __init__
+    self.remote_md5(remote_file=source_file) if hash_supported else None
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 214, in remote_md5
+    dest_md5 = self.process_md5(dest_md5).strip()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/linux/linux_ssh.py", line 219, in process_md5
+    return super(LinuxFileTransfer, LinuxFileTransfer).process_md5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/scp_handler.py", line 360, in process_md5
+    raise ValueError(f"Invalid output from MD5 command: {md5_output}")
+ValueError: Invalid output from MD5 command: 
+1e96e2a5fe4abbf25cbbe84dfea7a044  /home/ar/GNS3/projects/test/test.gns3
+
+2024-05-18 12:14:10,150 - nornir.core.task -    ERROR -      start() - Host 'target': task 'transfer_file' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/tests/getfile.py", line 8, in transfer_file
+    result = task.run(
+             ^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_file_transfer (failed)
+
+
+2024-05-18 12:17:17,964 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-21 16:43:54,257 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'ouput.gns3'} on 1 hosts
+2024-05-21 17:09:14,076 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.gns3'} on 1 hosts
+2024-05-21 17:09:45,082 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.gns3'} on 1 hosts
+2024-05-21 17:14:30,133 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.gns3'} on 1 hosts
+2024-05-21 17:21:42,033 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.gns3'} on 1 hosts
+2024-05-21 17:22:05,627 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'GNS3/projects/test/test.gns3', 'dest_file': 'output.gns3'} on 1 hosts
