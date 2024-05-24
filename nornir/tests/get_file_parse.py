@@ -14,7 +14,8 @@ def transfer_file(task: Task, source_file: str, dest_file: str):
             source_file=source_file,
             dest_file=dest_file,
             direction='get',  # Change direction to 'get' to transfer from remote to local
-            file_system='/home/ar'
+            file_system='/home/ar',
+            overwrite_file=True
         )
 
         return Result(
@@ -29,7 +30,7 @@ def transfer_file(task: Task, source_file: str, dest_file: str):
             failed=True
         )
 
-def parse_gns3_to_yaml(input_path):
+def parse_gns3_to_yaml(input_path, ip):
     try:
         with open(input_path, 'r') as json_file:
             data = json.load(json_file)
@@ -39,6 +40,8 @@ def parse_gns3_to_yaml(input_path):
         for node in data['topology']['nodes']:
             if 'console' in node and node['console'] is not None:
                 platform = None
+                port = node['console']
+                
                 if node['name'].startswith('PC'):
                     platform = 'vpcs'
                 elif node['name'].startswith('R'):
@@ -47,14 +50,29 @@ def parse_gns3_to_yaml(input_path):
                     platform = 'cisco_switch'
                 elif node['name'].startswith('LinuxVM'):
                     platform = 'linuxvm'
-                
-                hosts[node['name'].lower()] = {
-                    'hostname': node['name'].lower(),
-                    'port': node['console']        
-                }
+                    # Extract the port from properties -> options
+                    options = node['properties'].get('options', '')
+                    # Assuming the port is specified in the format "telnet:0.0.0.0:5012"
+                    port = int(options.split(':')[-1].split(',')[0])
 
-                if platform:
-                    hosts[node['name'].lower()]['platform'] = platform
+                hostname = node['name'].lower()
+
+                if platform == 'linuxvm':
+                    host = {
+                        'hostname': ip,
+                        'port': port,
+                        'groups': [platform]
+                    }
+                else:
+                    host = {
+                        'hostname': ip,
+                        'port': port,
+                        'groups': [platform],
+                        'username': 'ar',
+                        'password': 'admredes23'
+                    }
+
+                hosts[hostname] = host
 
         with open('hosts.yaml', 'w') as yaml_file:
             yaml.dump(hosts, yaml_file, default_flow_style=False)
@@ -95,7 +113,7 @@ if filtered_hosts.inventory.hosts:
     transfer_successful = all(not r.failed for r in result.values())
 
     if transfer_successful:
-        parse_gns3_to_yaml(dest_file)
+        parse_gns3_to_yaml(dest_file, '192.168.56.176')
     else:
         print("File transfer failed. Skipping JSON to YAML conversion.")
 else:

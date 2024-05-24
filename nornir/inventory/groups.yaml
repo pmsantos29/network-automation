@@ -1,9 +1,9 @@
 # groups.yaml
 ---
-ios_switch:
+cisco_switch:
     platform: cisco_ios_telnet
 
-ios_router:
+cisco_router:
     platform: cisco_ios_telnet
 
 vpcs:

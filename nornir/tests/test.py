@@ -7,7 +7,7 @@ import time
 nr = InitNornir(config_file="config.yaml")
 
 # Filter devices based on platform
-filtered_hosts = nr.filter(F(name="vpc1"))
+filtered_hosts = nr.filter(F(name="r1"))
 
 def send_telnet_commands(task):
     print(f"Sending ...")
@@ -26,7 +26,7 @@ def send_telnet_commands(task):
 
     # print(output)
     # print()
-    result = task.run(task=netmiko_send_command, command_string="ls") 
+    result = task.run(task=netmiko_send_command, command_string="show version") 
     print(result)
 
 results = filtered_hosts.run(task=send_telnet_commands)
