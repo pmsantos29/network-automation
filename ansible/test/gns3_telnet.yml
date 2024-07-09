@@ -1,0 +1,21 @@
+- hosts: telnet
+  gather_facts: false
+  tasks:
+  - name: run show command
+    gns3_telnet:
+      host: "{{ inventory_hostname }}"
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      port: "{{ ansible_port }}"
+      prompts:
+      - '[>#]'
+      command:
+      - terminal length 0
+      - show version
+      
+    register: output
+
+  - name: Display output
+    ansible.builtin.debug:
+      var: output.stdout_lines
+      

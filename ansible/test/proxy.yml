@@ -1,0 +1,14 @@
+---
+- hosts: sw1
+  gather_facts: false
+  tasks:
+    - name: Show Version
+      cisco.ios.ios_command:
+        commands:
+          - show version
+
+      register: output
+
+    - name: Display output
+      ansible.builtin.debug:
+        var: output.stdout_lines

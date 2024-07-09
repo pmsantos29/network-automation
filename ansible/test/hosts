@@ -1,16 +1,18 @@
-[switch]
-sw1 ansible_host=127.0.0.1 ansible_port=5001 ansible_user=ar
+[telnet]
+telnet1 ansible_host=192.168.56.176 ansible_port=5004 ansible_user=cisco ansible_password=cisco device_type="cisco_ios_telnet"
 
-[linuxVM]
-linux1 ansible_host=127.0.0.1 ansible_user=ar 
-#linux2 ansible_host=127.0.0.1  ansible_user=ar ssh_common_args="telnet localhost 5008"
+[switch]
+sw1 ansible_host=192.168.56.176
 
 [switch:vars]
-ansible_connection=local
-#ansible_ssh_common_args="nc -C localhost 5001"
+ansible_connection=ansible.netcommon.network_cli
+ansible_network_os=cisco.ios.ios
+ansible_user=cisco@127.0.0.1:5004
+ansible_password=admredes23
+ansible_port=2201
+
+[linuxVM]
+linux1 ansible_host=192.168.56.176 
 
 [linuxVM:vars]
-#ansible_connection=local
-ansible_ssh_common_args= "telnet localhost 5005"
-#ssh_common_args=telnet localhost 5008
-#ssh_common_args="telnet localhost 5005"
+ansible_port=5004

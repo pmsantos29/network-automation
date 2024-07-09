@@ -1,0 +1,21 @@
+- hosts: telnet
+  gather_facts: false
+  tasks:
+  - name: run show command
+    ansible.netcommon.telnet:
+      timeout: 5
+      login_prompt: skip_login
+      port: "{{ ansible_port | default(omit) }}"
+      send_newline: true
+      prompts:
+      - '[>#]'
+      command:
+      - terminal length 0
+      - show version
+      
+    register: output
+
+  - name: Display output
+    ansible.builtin.debug:
+      var: output.stdout_lines
+      

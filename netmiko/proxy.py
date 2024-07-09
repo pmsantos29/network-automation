@@ -107,6 +107,7 @@ class TelnetConnection(Telnet):
             try:
                 # GNS3 console requires "\r\n", so I am ensuring that I always send it
                 line = line.rstrip(os.linesep) + "\r\n"
+                print(f"Telnet Data received: {line.decode('ascii').strip()}")
                 self.write(line.encode("ascii"))
             except ConnectionAbortedError:
                 return
