@@ -1,1 +1,2305 @@
-2024-05-29 20:11:28,344 -  nornir.core -     INFO -        run() - Running task 'transfer_file' with args {'source_file': 'test/test.gns3'} on 1 hosts
+2024-07-05 09:17:53,256 -  nornir.core -  WARNING -        run() - Task 'send_telnet_commands' has not been run – 0 hosts selected
+2024-07-05 09:18:32,435 -  nornir.core -  WARNING -        run() - Task 'send_telnet_commands' has not been run – 0 hosts selected
+2024-07-05 09:19:00,706 -  nornir.core -  WARNING -        run() - Task 'send_telnet_commands' has not been run – 0 hosts selected
+2024-07-05 09:19:14,283 -  nornir.core -  WARNING -        run() - Task 'send_telnet_commands' has not been run – 0 hosts selected
+2024-07-05 09:29:58,281 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:30:12,381 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:30:13,481 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 09:30:13,482 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="traceroute 10.0.0.1")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:31:21,815 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:31:22,826 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 09:31:22,827 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="traceroute 10.0.0.3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:32:56,761 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:32:57,772 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 09:32:57,772 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.3")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:33:55,401 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:33:56,412 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 09:33:56,413 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="show run")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:37:12,044 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:37:24,080 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:45:30,346 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:45:40,545 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'traceroute\\ 10\\.0\\.0\\.44' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 09:45:40,546 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="traceroute 10.0.0.44")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:46:47,353 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:47:00,407 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:47:10,569 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 09:47:10,570 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:47:20,862 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 09:47:31,018 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 09:47:31,019 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 09:47:49,102 -  nornir.core -     INFO -        run() - Running task 'netmiko_send_command' with args {'command_string': 'ping 10.0.0.1 -c 4'} on 1 hosts
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          2024-07-05 10:15:50,044 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:16:00,189 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:16:00,189 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:19:25,679 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:19:35,801 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1824, in send_command
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+Pattern not detected: 'WOrk' in output.
+
+Things you might try to fix this:
+1. Explicitly set your pattern using the expect_string argument.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:19:35,802 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="WOrk")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:19:53,998 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:20:04,109 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:20:04,110 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="10")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:21:00,007 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:21:10,115 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:21:10,116 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="PC1")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:21:24,224 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:21:34,335 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:21:34,335 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="PC")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:21:46,405 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:21:56,514 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'ping\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:21:56,515 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.4", expect_string="wor")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:22:11,888 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:22:21,995 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:22:21,996 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.4", expect_string="wor")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:24:48,445 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:24:58,556 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:24:58,557 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.4", expect_string=r"10\.0\.0\.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:30:08,853 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:30:18,964 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\\\\\.0\\\\\\.0\\\\\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:30:18,964 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string=r"trace 10\.0\.0\.4", expect_string=r"10\.0\.0\.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:30:51,425 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:31:01,530 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:31:01,530 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, expect_string=r"10\.0\.0\.4", command_string="trace 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:32:04,794 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:32:14,905 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:32:14,906 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, expect_string=r"100", command_string="trace 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:37:58,686 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:38:08,793 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:38:08,794 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, expect_string=r"PC1", command_string="trace 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:43:29,665 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:43:29,769 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 30, in netmiko_send_command
+    result = net_connect.send_command_timing(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.send_command_timing() got an unexpected keyword argument 'expect_string'
+
+2024-07-05 10:43:29,770 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, use_timing=True, expect_string=r"PC1", command_string="trace 10.0.0.4", delay_factor= 2)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:43:50,670 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:44:03,137 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:44:10,986 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:44:21,566 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:44:33,048 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:44:43,210 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:44:43,210 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:45:11,863 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:45:51,581 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:46:01,737 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.4' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:46:01,737 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.4", delay_factor= 3)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:46:07,391 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:46:13,567 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:46:23,725 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:46:23,726 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor= 4)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:46:32,623 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:46:42,786 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:46:42,787 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor= 5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:46:48,535 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:46:58,696 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:46:58,696 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor= 10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:49:01,991 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:49:12,098 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 10:49:12,099 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", expect_string=r"10\.0\.0\.4" , delay_factor= 10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:49:30,261 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:49:37,825 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:50:15,554 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:50:30,367 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:53:08,390 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:53:09,452 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 10:53:09,452 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="traceroute 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:53:34,648 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:53:35,659 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 10:53:35,660 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="ping 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 10:54:38,824 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 10:54:39,835 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 26, in netmiko_send_command
+    net_connect = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/connections/netmiko.py", line 59, in open
+    connection = ConnectHandler(**parameters)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/ssh_dispatcher.py", line 399, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 488, in __init__
+    self._open()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 493, in _open
+    self.establish_connection()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1125, in establish_connection
+    self.telnet_login()
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/cisco_base_connection.py", line 117, in telnet_login
+    self.write_channel(self.username + "\r")
+                       ~~~~~~~~~~~~~~^~~~~~
+TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
+
+2024-07-05 10:54:39,836 - nornir.core.task -    ERROR -      start() - Host 'r1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="traceroute 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:09:44,196 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:09:54,350 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:09:54,351 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:10:03,446 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:10:13,600 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:10:13,601 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:10:24,384 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:10:33,364 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:10:43,525 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:10:43,526 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:10:51,220 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:11:01,155 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:11:11,310 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.29' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:11:11,311 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.29", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:14:17,503 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:14:44,369 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:14:54,529 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:14:54,529 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:15:02,840 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:15:11,365 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:15:23,532 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:15:43,613 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:15:53,770 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.6' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:15:53,771 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.6", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:16:10,327 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 11:16:20,487 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 11:16:20,487 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 11:16:43,933 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 12:36:14,190 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 12:36:14,294 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: BaseConnection.send_command() got an unexpected keyword argument 'read_until_pattern'
+
+2024-07-05 12:36:14,295 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", read_until_pattern="PC1")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:11:32,122 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:11:42,281 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:11:42,281 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:11:59,922 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:12:10,084 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:12:10,085 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:12:27,569 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:12:43,676 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:12:53,838 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.2' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:12:53,838 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.2", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:15:21,813 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:15:49,206 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:16:34,298 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:16:52,629 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:17:02,782 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:17:02,783 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.28", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:32:54,718 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:33:04,878 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:33:04,879 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.28", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:33:23,735 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:36:29,688 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:36:39,850 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:36:39,851 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.28", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:37:14,465 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:37:24,620 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:37:24,621 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.28", delay_factor=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:37:36,123 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:38:55,294 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:39:22,910 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:39:33,069 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:39:33,070 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="trace 10.0.0.28", delay_factor=5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:41:56,035 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:42:06,282 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:42:06,283 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="\r\ntrace 10.0.0.28", delay_factor=5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:42:35,851 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:42:46,060 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1774, in send_command
+    new_data = self.command_echo_read(cmd=cmd, read_timeout=10)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1484, in command_echo_read
+    new_data = self.read_until_pattern(
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 746, in read_until_pattern
+    raise ReadTimeout(msg)
+netmiko.exceptions.ReadTimeout: 
+
+Pattern not detected: 'trace\\ 10\\.0\\.0\\.28' in output.
+
+Things you might try to fix this:
+1. Adjust the regex pattern to better identify the terminating string. Note, in
+many situations the pattern is automatically based on the network device's prompt.
+2. Increase the read_timeout to a larger value.
+
+You can also look at the Netmiko session_log or debug log for more information.
+
+
+
+2024-07-05 14:42:46,060 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 17, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string="\r\ntrace 10.0.0.28", delay_factor=5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:45:40,255 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:45:40,256 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: netmiko_send_command() missing 1 required positional argument: 'command_string'
+
+2024-07-05 14:45:40,257 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 18, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, commands=["\r\n", "trace 10.0.0.28"], delay_factor=5)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+
+2024-07-05 14:45:53,241 -  nornir.core -     INFO -        run() - Running task 'send_telnet_commands' with args {} on 1 hosts
+2024-07-05 14:45:53,394 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'netmiko_send_command' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir_netmiko/tasks/netmiko_send_command.py", line 32, in netmiko_send_command
+    result = net_connect.send_command(command_string, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 110, in wrapper_decorator
+    return_val = func(self, *args, **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/utilities.py", line 595, in wrapper_decorator
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1765, in send_command
+    command_string = self.normalize_cmd(command_string)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/netmiko/base_connection.py", line 1982, in normalize_cmd
+    command = command.rstrip()
+              ^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'rstrip'
+
+2024-07-05 14:45:53,394 - nornir.core.task -    ERROR -      start() - Host 'pc1': task 'send_telnet_commands' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/src/tests/test_command.py", line 18, in send_telnet_commands
+    result = task.run(task=netmiko_send_command, command_string=["\r\n", "trace 10.0.0.28"], delay_factor=5)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ar/Diss_Network/nornir/lib64/python3.11/site-packages/nornir/core/task.py", line 174, in run
+    raise NornirSubTaskError(task=run_task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: netmiko_send_command (failed)
+
+

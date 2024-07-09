@@ -1,0 +1,22 @@
+linuxvmtest-1:
+  groups:
+  - linuxvm
+  hostname: 192.168.56.176
+  password: admredes23
+  port: 5012
+  username: ar
+pc1:
+  groups:
+  - vpcs
+  hostname: 192.168.56.176
+  port: 5011
+r1:
+  groups:
+  - cisco_router
+  hostname: 192.168.56.176
+  port: 5005
+sw1:
+  groups:
+  - cisco_switch
+  hostname: 192.168.56.176
+  port: 5003

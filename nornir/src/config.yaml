@@ -12,7 +12,3 @@ runner:
      options:
           num_workers: 2
 
-output_dir: "reports"
-
-extras:
-     conn_timeout: 66  # Adjust timeout value here

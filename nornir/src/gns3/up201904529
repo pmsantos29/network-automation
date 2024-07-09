@@ -104,7 +104,7 @@
                         "label": {
                             "rotation": 0,
                             "style": "font-family: TypeWriter;font-size: 10.0;font-weight: bold;fill: #000000;fill-opacity: 1.0;",
-                            "text": "e0: 10.0.0.4/24",
+                            "text": "e0: 10.0.0.3/24",
                             "x": 82,
                             "y": 22
                         },
@@ -320,7 +320,7 @@
                 "symbol": ":/symbols/qemu_guest.svg",
                 "template_id": "49d78165-761c-4a10-95c5-db4eb654c5ca",
                 "width": 65,
-                "x": 69,
+                "x": 71,
                 "y": 92,
                 "z": 1
             }
