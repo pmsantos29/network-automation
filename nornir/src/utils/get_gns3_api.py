@@ -1,7 +1,8 @@
 import requests
 import yaml
+import json
 
-def get_project(student_ip):    
+def get_project(gns3_path, student_ip):    
     try:
         # First GET request to get the project ID
         project_url = f"http://{student_ip}:3080/v2/projects"
@@ -25,7 +26,10 @@ def get_project(student_ip):
         # Check if the request was successful
         response.raise_for_status()
 
-        nodes = response.json()
+        nodes = response.json()        
+        with open(gns3_path + ".json", 'w') as file:
+            json.dump(nodes, file, indent=4)
+            
         print(f"Nodes parameters for project {project_id} on IP {student_ip}:")
         return nodes
 

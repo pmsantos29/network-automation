@@ -21,6 +21,6 @@ for i in up_linux.inventory.hosts.items():
     gns3_path = "gns3/" + student_mec
     inventory_path = "inventory/"
 
-    nodes = get_project(student_ip)
+    nodes = get_project(gns3_path, student_ip)
     gns3_to_yaml(nodes, student_ip, student_mec)
     
