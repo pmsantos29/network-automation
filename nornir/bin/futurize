@@ -1,4 +1,4 @@
-#!/home/ar/Diss_Network/nornir/bin/python
+#!/home/ar/Diss_Network/nornir/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys
