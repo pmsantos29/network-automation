@@ -1,0 +1,4 @@
+# Ignore the bin, lib, and lib64 directories in the nornir folder
+nornir/bin/
+nornir/lib/
+nornir/lib64/
