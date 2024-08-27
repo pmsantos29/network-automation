@@ -1,12 +1,14 @@
 - hosts: telnet
   gather_facts: false
+  connection: local
   tasks:
   - name: run show command
     ansible.netcommon.telnet:
-      timeout: 5
-      login_prompt: skip_login
-      port: "{{ ansible_port | default(omit) }}"
       send_newline: true
+      timeout: 5
+      user: "{{ ansible_user }}"
+      password: "{{ ansible_password }}"
+      port: "{{ ansible_port }}"
       prompts:
       - '[>#]'
       command:
